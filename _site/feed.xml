@@ -4,10 +4,10 @@
     <title>Alex Pate</title>
     <description>Where I can wax poetically about programming.
 </description>
-    <link>http://xeinherjar.github.io/</link>
-    <atom:link href="http://xeinherjar.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Jan 2015 13:01:23 -0500</pubDate>
-    <lastBuildDate>Tue, 13 Jan 2015 13:01:23 -0500</lastBuildDate>
+    <link>http://alexpate.net/</link>
+    <atom:link href="http://alexpate.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 13 Jan 2015 13:10:34 -0500</pubDate>
+    <lastBuildDate>Tue, 13 Jan 2015 13:10:34 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -44,8 +44,8 @@ Friday is lab all day with an hour meeting with a subset of the cohort.  This fo
 &lt;p&gt;Feel free to check out my &lt;a href=&quot;https://github.com/xeinherjar/dotfiles&quot;&gt;Dot files&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 11 Jan 2015 12:09:31 -0500</pubDate>
-        <link>http://xeinherjar.github.io/tiy/2015/01/11/Week-01-TiY.html</link>
-        <guid isPermaLink="true">http://xeinherjar.github.io/tiy/2015/01/11/Week-01-TiY.html</guid>
+        <link>http://alexpate.net/tiy/2015/01/11/Week-01-TiY.html</link>
+        <guid isPermaLink="true">http://alexpate.net/tiy/2015/01/11/Week-01-TiY.html</guid>
         
         
         <category>tiy</category>
