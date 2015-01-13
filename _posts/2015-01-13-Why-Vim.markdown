@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "Getting up to speed with Vim"
+date:   2015-01-13 18:00:00
+categories: TiY vim
+---
+
+#Why Vim?
+
+Its ubiquitous.  Its installed everywhere, its on my machine, its on my remote server.  It runs in the terminal.  I can customize it.
+
+But also because it is a new tool.  As a developer it seems I will spend my time doing mainly two things: thinking and typing.  I can't control what I think with, but I have some control over my tools.
+
+With Vim I won't need to leave the terminal, I can make the terminal my IDE.
+
+## Navigation
+Navigation has honestly been the most difficult part to get used to.
+Arrow keys?  Apparently those are for amateurs.
+I disabled the arrow keys to force myself to use the hjkl keys for navigation.  Its a work in progress but after the first hour or so its not so bad.
+
+{% highlight vim %}
+    " Disable Arrow keys in normal and insert modes
+    nnoremap <up> <nop>
+    nnoremap <down> <nop>
+    nnoremap <left> <nop>
+    nnoremap <right> <nop>
+    inoremap <up> <nop>
+    inoremap <down> <nop>
+    inoremap <left> <nop>
+    inoremap <right> <nop>
+{% endhighlight %}
+
+## Composability
+There is some inherit power in Vim that I just haven't found in other editors.  I could go into Visual mode and highlight a but of text to modify, or I could just say `9>>` and have it indent current line plus the next 8 in.  Or `9dd` to delete it.  It doesn't really matter.  Once I learn that a number followed by a command operates on that many lines it only a matter of time until I pick up new intuitive things I can do.
