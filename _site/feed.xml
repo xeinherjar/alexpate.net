@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alex Pate</title>
+    <description>Where I can wax poetically about programming.
+</description>
+    <link>http://xeinherjar.github.io/</link>
+    <atom:link href="http://xeinherjar.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 13 Jan 2015 13:01:23 -0500</pubDate>
+    <lastBuildDate>Tue, 13 Jan 2015 13:01:23 -0500</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Week One of The Iron Yard</title>
+        <description>&lt;h1 id=&quot;html--css--what-is-your-name-again&quot;&gt;HTML | CSS | What is your name again?&lt;/h1&gt;
+
+&lt;p&gt;I have just wrapped up week one at The Iron Yard.&lt;/p&gt;
+
+&lt;h2 id=&quot;my-background-and-why-am-i-here&quot;&gt;My background and why am I here.&lt;/h2&gt;
+&lt;p&gt;I’ve spent the last 8 or 9 years working in the legal vertical.  I spent 4.5 of those years working at &lt;a href=&quot;http://www.intelliteach.com&quot;&gt;Intelliteach&lt;/a&gt; providing help desk services for a multitude of law firms.  From there I went off to &lt;a href=&quot;http://docauto.com&quot;&gt;DocAuto, Inc.&lt;/a&gt; where I worked many positions.  I started with level 1 support and worked my way into Services.  After I found that services wasn’t for me I moved into a system administrator position.  Right before I left I was moved into dev where I spent time cleaning up our unit and integration tests.  While dev was the position I wanted, it came too late.  I was already promised to The Iron Yard.&lt;/p&gt;
+
+&lt;p&gt;When I graduated high school I was of two minds.  Computer Science or Animation?
+The recruiter for The Art Institute of Atlanta was much more convincing than the one from GA State.  So I went off to study animation for a few years.  While I loved my time at the Art Institute I knew when I graduated that computer animation wasn’t something I could do full time.&lt;/p&gt;
+
+&lt;p&gt;Since graduation I’ve toyed with many programming languages and paradigms.  C, C++, C#, Python, Ruby, Haskell, Go, JavaScript and even Elixir.  While I’ve never done anything advanced with them I really enjoyed learning how they worked.  What I really needed though was some structure, and people I could talk to.  I just want to build things and The Iron Yard is giving me that opportunity.&lt;/p&gt;
+
+&lt;h2 id=&quot;and-so-it-begins&quot;&gt;And so it begins.&lt;/h2&gt;
+&lt;p&gt;Week one has been comprised of orientation, house keeping, HTML, CSS, forgetting names, forgetting CSS selectors and forgetting more names.&lt;/p&gt;
+
+&lt;p&gt;I’m in the Front End Engineering class with 11 other students.
+The daily schedule is standup, lecture, food, lab.
+Friday is lab all day with an hour meeting with a subset of the cohort.  This forces you to hang out and interact with students that are not in your class.  I’m not very good at initiating conversations so I’m hoping this will help me build up these kinds of soft skills.  I’ve already meet a few of the kids in the Rails class and even a few previous students who have swung by the new building.&lt;/p&gt;
+
+&lt;p&gt;Going in I was already familiar with HTML and CSS, but there is a difference between being able to tweak some CSS and to understand what it is actually doing. Once Tim, our instructor, explained the box model and block vs. inline display I was able to start making sense of some of the idiosyncrasies of CSS.&lt;/p&gt;
+
+&lt;p&gt;The front end teacher in Tampa, &lt;a href=&quot;https://github.com/jisaacks&quot;&gt;JD&lt;/a&gt;, was our guest instructor on Thursday.  I thought it was great to have another perspective on the material.  He seemed to really know his stuff.  None of the questions we asked stumped him.&lt;/p&gt;
+
+&lt;h2 id=&quot;reinforcement&quot;&gt;Reinforcement&lt;/h2&gt;
+&lt;p&gt;I have found that one of the best ways to solidify my understanding of what we are learning is to explain it to someone else.  I’ve learned that if I can’t explain it with my own words then I don’t have a true understanding of the concept.  My goal here is to internalize everything and not just regurgitate the information.&lt;/p&gt;
+
+&lt;h2 id=&quot;bikeshedding&quot;&gt;Bikeshedding&lt;/h2&gt;
+&lt;p&gt;I’ve also spent a fair amount of time customizing my shell [zsh] and Vim.  While most of the other students are using Sublime Text, we have two hold outs.  One is using Atom and I’m using Vim.  While Vim appears to have a large learning curve I’m already being fairly productive.  I’m not near as fast as I was in Sublime Text but I think this will pay off in the end.&lt;/p&gt;
+
+&lt;p&gt;Feel free to check out my &lt;a href=&quot;https://github.com/xeinherjar/dotfiles&quot;&gt;Dot files&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Jan 2015 12:09:31 -0500</pubDate>
+        <link>http://xeinherjar.github.io/tiy/2015/01/11/Week-01-TiY.html</link>
+        <guid isPermaLink="true">http://xeinherjar.github.io/tiy/2015/01/11/Week-01-TiY.html</guid>
+        
+        
+        <category>tiy</category>
+        
+      </item>
+    
+  </channel>
+</rss>
