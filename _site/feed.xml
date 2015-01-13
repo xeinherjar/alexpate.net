@@ -6,37 +6,47 @@
 </description>
     <link>http://alexpate.net/</link>
     <atom:link href="http://alexpate.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Jan 2015 15:33:28 -0500</pubDate>
-    <lastBuildDate>Tue, 13 Jan 2015 15:33:28 -0500</lastBuildDate>
+    <pubDate>Tue, 13 Jan 2015 18:28:56 -0500</pubDate>
+    <lastBuildDate>Tue, 13 Jan 2015 18:28:56 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Getting up to speed with Vim</title>
         <description>&lt;h1 id=&quot;why-vim&quot;&gt;Why Vim?&lt;/h1&gt;
 
-&lt;p&gt;Its ubiquitous.  Its installed everywhere, its on my machine, its on my remote server.  It runs in the terminal.  I can customize it.&lt;/p&gt;
+&lt;p&gt;It’s ubiquitous.&lt;br /&gt;
+I don’t have to leave my terminal.&lt;br /&gt;
+I can customize it. &lt;/p&gt;
 
-&lt;p&gt;But also because it is a new tool.  As a developer it seems I will spend my time doing mainly two things: thinking and typing.  I can’t control what I think with, but I have some control over my tools.&lt;/p&gt;
-
-&lt;p&gt;With Vim I won’t need to leave the terminal, I can make the terminal my IDE.&lt;/p&gt;
+&lt;p&gt;But also because it is a new tool.  As a developer, it seems I will spend my time mostly doing the following: thinking and typing.  I can’t control what I think with, but I have some control over my tools.&lt;/p&gt;
 
 &lt;h2 id=&quot;navigation&quot;&gt;Navigation&lt;/h2&gt;
 &lt;p&gt;Navigation has honestly been the most difficult part to get used to.
 Arrow keys?  Apparently those are for amateurs.
-I disabled the arrow keys to force myself to use the hjkl keys for navigation.  Its a work in progress but after the first hour or so its not so bad.&lt;/p&gt;
+I disabled the arrow keys to force myself to use the hjkl keys for navigation.  It’s a work in progress, but after the first hour or so, it’s not so bad.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;quot; Disable Arrow keys in normal and insert modes&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;nnoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;up&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;nnoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;down&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;nnoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;nnoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;up&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;nnoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;down&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;nnoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;nnoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;inoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;up&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;inoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;down&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;inoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;inoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;up&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;inoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;down&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;inoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;inoremap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;nop&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;composability&quot;&gt;Composability&lt;/h2&gt;
-&lt;p&gt;There is some inherit power in Vim that I just haven’t found in other editors.  I could go into Visual mode and highlight a but of text to modify, or I could just say &lt;code&gt;9&amp;gt;&amp;gt;&lt;/code&gt; and have it indent current line plus the next 8 in.  Or &lt;code&gt;9dd&lt;/code&gt; to delete it.  It doesn’t really matter.  Once I learn that a number followed by a command operates on that many lines it only a matter of time until I pick up new intuitive things I can do.&lt;/p&gt;
+&lt;p&gt;Vim’s commands are composable.&lt;/p&gt;
+
+&lt;p&gt;This means you can take commands and use them together. &lt;code&gt;9&amp;lt;enter&amp;gt;&lt;/code&gt; moves down 9 lines.  &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; indents.  &lt;code&gt;9&amp;gt;&amp;gt;&lt;/code&gt; means indent 9 lines.  &lt;/p&gt;
+
+&lt;p&gt;I know that &lt;code&gt;dd&lt;/code&gt; means delete a line so &lt;code&gt;9dd&lt;/code&gt; means delete 9 lines.  &lt;code&gt;gU&lt;/code&gt; means UPPERCASE.  Guess what &lt;code&gt;gU3&lt;/code&gt; does?  Correct, it UPPERCASES 3 lines.  If &lt;code&gt;w&lt;/code&gt; means select token then &lt;code&gt;gUw&lt;/code&gt; will UPPERCASE the entire word.  &lt;code&gt;dw&lt;/code&gt; will delete a word.&lt;/p&gt;
+
+&lt;p&gt;Each new command greatly increases the amount of work Vim can do for me. &lt;strong&gt;That is what makes Vim exciting to learn for me.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Also just a neat trick I learned earlier today:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:r !shellcmd&lt;/code&gt;, where shellcmd is some shell command, will pipe the command’s output into your current Vim buffer.&lt;/p&gt;
 </description>
         <pubDate>Tue, 13 Jan 2015 13:00:00 -0500</pubDate>
         <link>http://alexpate.net/tiy/vim/2015/01/13/Why-Vim.html</link>
