@@ -6,8 +6,8 @@
 </description>
     <link>http://alexpate.net/</link>
     <atom:link href="http://alexpate.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Jan 2015 08:53:25 -0500</pubDate>
-    <lastBuildDate>Mon, 19 Jan 2015 08:53:25 -0500</lastBuildDate>
+    <pubDate>Mon, 19 Jan 2015 09:48:55 -0500</pubDate>
+    <lastBuildDate>Mon, 19 Jan 2015 09:48:55 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;Two projects a day.  One for learning and one for homework.  Each project requires us to create git repo, setup our files and push to GitHub.  Its not a lot of work, about 8 or 9 commands and quick trip to GitHub to setup the remote repo.  I was a sys admin.  One thing you learn quickly as a sys admin, if you do something multiple times then automate when you can.&lt;/p&gt;
 
-&lt;p&gt;I wrote a quick shell script to help with this.  This was not class work but I feel like it was great thing to spend some time on.  It’s pretty simple, copy some files, make some directories, init a local git repo, and the best part: set up the remote repo on GitHub.  8 commands vs 1.  Plus I got to interact with their API.&lt;/p&gt;
+&lt;p&gt;I wrote a quick shell script to help with this.  This was not class work but I feel like it was great thing to spend some time on.  It is pretty simple, copy some files, make some directories, init a local git repo, and the best part: set up the remote repo on GitHub.  8 commands vs 1.  Plus I got to interact with their API.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/xeinherjar/f72c79dfc9df7887f6d8.js&quot;&gt; &lt;/script&gt;
 
@@ -31,8 +31,9 @@
 &lt;p&gt;We have finally arrived a JavaScript.  I understand why we had to spend time with CSS and HTML, but it feels good to have moved on JavaScript.  So far it has been straight forward, syntax, built in methods, and the DOM.  Now that we know some CSS, HTML, JS and how to interact with the DOM we have been building small interactive pages.&lt;/p&gt;
 
 &lt;h2 id=&quot;putting-it-all-together&quot;&gt;Putting it all together.&lt;/h2&gt;
-&lt;p&gt;I thought it would be a good weekend project to work on a command line tool to help interact with GitHub.  We are learning JavaScript, so why not start with node? I’ve decided to go through the exercises at &lt;a href=&quot;http://nodeschool.io&quot;&gt;nodeschool.io&lt;/a&gt; before I take a real stab at it.
-During my research I found: &lt;a href=&quot;https://hub.github.com&quot;&gt;Hub&lt;/a&gt;, which is the offical GitHub command line tool.
+&lt;p&gt;I thought it would be a good weekend project to work on a command line tool to help interact with GitHub.  We are learning JavaScript, so why not start with node? I’ve decided to go through the exercises at &lt;a href=&quot;http://nodeschool.io&quot;&gt;nodeschool.io&lt;/a&gt; before I take a real stab at it.&lt;/p&gt;
+
+&lt;p&gt;During my research I found: &lt;a href=&quot;https://hub.github.com&quot;&gt;Hub&lt;/a&gt;, which is the offical GitHub command line tool.
 Since I don’t want to recreate Hub, I’m thinking I could just wrap a few of GitHub’s api calls with our school’s workflow just to make things happen a bit faster.&lt;/p&gt;
 
 </description>
