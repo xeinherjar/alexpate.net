@@ -6,9 +6,52 @@
 </description>
     <link>http://alexpate.net/</link>
     <atom:link href="http://alexpate.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Jan 2015 09:56:53 -0500</pubDate>
-    <lastBuildDate>Mon, 19 Jan 2015 09:56:53 -0500</lastBuildDate>
+    <pubDate>Sun, 01 Feb 2015 20:58:05 -0500</pubDate>
+    <lastBuildDate>Sun, 01 Feb 2015 20:58:05 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Week Three and Four of The Iron Yard</title>
+        <description>&lt;h1 id=&quot;javascript--jquery--team-projects&quot;&gt;JavaScript | jQuery | Team Projects&lt;/h1&gt;
+
+&lt;h2 id=&quot;week-three&quot;&gt;Week three.&lt;/h2&gt;
+
+&lt;p&gt;Week three was a short week.  School was closed for MLK day.
+We covered some more JavaScript and had a brief overview of jQuery.  More importantly we started working with build tools and production pipelines, i.e. Gulp, NPM, and Bower.
+As for work we had to recreate the &lt;a href=&quot;http://xeinherjar.github.io/etsy-frontpage-clone/&quot;&gt;Etsy search page&lt;/a&gt; and create an accordion.&lt;/p&gt;
+
+&lt;h2 id=&quot;week-four&quot;&gt;Week four.&lt;/h2&gt;
+
+&lt;p&gt;Week four we started getting into libraries like &lt;a href=&quot;http://underscorejs.org/&quot;&gt;Underscore&lt;/a&gt;/&lt;a href=&quot;http://lodash.com/&quot;&gt;lodash&lt;/a&gt;.  Mainly it was being used as a gentle introduction to templates.  Our start of the week project was to recreate our &lt;a href=&quot;http://xeinherjar.github.io/github-frontpage-clone/&quot;&gt;Github Repo page&lt;/a&gt;.
+Next up was RESTful apis and Responsive Web Design.  With all of that under our belts we started work on the dreaded group project.&lt;/p&gt;
+
+&lt;h2 id=&quot;group-projects&quot;&gt;Group Projects&lt;/h2&gt;
+
+&lt;p&gt;I wonder how many people actively like group projects?&lt;/p&gt;
+
+&lt;p&gt;But we all know the downsides, so lets focus on the good parts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Project Management&lt;/li&gt;
+  &lt;li&gt;Git work flow&lt;/li&gt;
+  &lt;li&gt;Git conflicts&lt;/li&gt;
+  &lt;li&gt;Trust &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We used &lt;a href=&quot;http://trello.com&quot;&gt;Trello&lt;/a&gt; for our project managment.  Our process was pretty simple.  Three lanes: backlog, in progress, and complete.  We defined our tasks and assigned them.  Then they just work across the screen.  This gave us a really good visual into who was doing what, when it was being done and how long it took to complete.&lt;/p&gt;
+
+&lt;p&gt;Our Git work flow was master -&amp;gt; staging -&amp;gt; local-dev.  We kept Master as our gold copy and was only pushed when it was in working order.  All of our conflicts were fixed in local branches before being pushed into staging.  We are a group of front-end people so we had to work in the same files, and that made it tricky.  We set our HTML structure as a group before we went off on our own to help reduce conflicts.  In general it went pretty smooth, only one person was allowed to edit index.html at a time.  We each had our own JavaScript and SASS files.  Just had to pay attention to the order they were imported.&lt;/p&gt;
+
+&lt;p&gt;Another big win for us was trust.  Knowing that something will be delivered when a team mate says it will is a huge boon. It reduces a lot of frustrations and stress that accompanies most group projects.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Feb 2015 09:15:27 -0500</pubDate>
+        <link>http://alexpate.net/tiy/2015/02/01/Week-03-04-TiY.html</link>
+        <guid isPermaLink="true">http://alexpate.net/tiy/2015/02/01/Week-03-04-TiY.html</guid>
+        
+        
+        <category>tiy</category>
+        
+      </item>
     
       <item>
         <title>Week Two of The Iron Yard</title>
