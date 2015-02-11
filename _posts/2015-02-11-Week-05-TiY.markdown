@@ -4,11 +4,12 @@ title:  "Week Five of The Iron Yard"
 date:   2015-02-11 13:54:12
 categories: TiY
 ---
-# ajax | IIFE | Prototypes | Ruby...
+# ajax | IIFE | Prototypes | Ruby
 
 Week Five.
 
-We had our first drop this week.  And then there were eleven students.
+We had our first drop this week.  I hope its not the start of a new trend.
+
 
 ## IIFE - Immediately Invoked Function Expression
 JavaScript lacks a native module/import system and is okay with polluting the global name space.  IIFE is a technique that allows us to get some of the benefits of a module system and helps us keep state private.  By wrapping your function in a closure you get to lock your private state/properties/methods away and control how you affect the larger scope of your environment.
