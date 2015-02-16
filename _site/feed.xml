@@ -6,8 +6,8 @@
 </description>
     <link>http://alexpate.net/</link>
     <atom:link href="http://alexpate.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Feb 2015 13:07:17 -0500</pubDate>
-    <lastBuildDate>Mon, 16 Feb 2015 13:07:17 -0500</lastBuildDate>
+    <pubDate>Mon, 16 Feb 2015 13:12:40 -0500</pubDate>
+    <lastBuildDate>Mon, 16 Feb 2015 13:12:40 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -20,7 +20,7 @@
 I don’t have much to say about these other than: &lt;em&gt;Backbone&lt;/em&gt;…  You make my life much easier.&lt;/p&gt;
 
 &lt;h2 id=&quot;chip-8-emulator&quot;&gt;Chip-8 Emulator&lt;/h2&gt;
-&lt;p&gt;We have a very busy week coming up so we had a light weekend, insted of relaxing I decided to build a Chip-8 emulator.  If you are unfamiliar with the &lt;a href=&quot;http://en.wikipedia.org/wiki/CHIP-8&quot;&gt;Chip-8&lt;/a&gt; is was a virtual platform from the 70s.  It allowed programmers to write their games once and then they would run wherever the Chip-8 VM would run.  It used a hexbased keypad, so its a little janky compared to modern controllers.&lt;/p&gt;
+&lt;p&gt;We have a very busy week coming up so we had a light weekend, instead of relaxing I decided to build a Chip-8 emulator.  If you are unfamiliar with the &lt;a href=&quot;http://en.wikipedia.org/wiki/CHIP-8&quot;&gt;Chip-8&lt;/a&gt; is was a virtual platform from the 70s.  It allowed programmers to write their games once and then they would run wherever the Chip-8 VM would run.  It used a hexbased keypad, so its a little janky compared to modern controllers.&lt;/p&gt;
 
 &lt;p&gt;Getting the screen to draw was one of the most exciting things I’ve ever done.
 &lt;img src=&quot;/assets/chip8.png&quot; alt=&quot;Chip-8 ; Space Invaders, Brix&quot; /&gt;  &lt;/p&gt;
