@@ -1,0 +1,35 @@
+<h1 id="why-vim">Why Vim?</h1>
+
+<p>It’s ubiquitous.<br />
+I don’t have to leave my terminal.<br />
+I can customize it. </p>
+
+<p>But also because it is a new tool.  As a developer, it seems I will spend my time mostly doing the following: thinking and typing.  I can’t control what I think with, but I have some control over my tools.</p>
+
+<h2 id="navigation">Navigation</h2>
+<p>Navigation has honestly been the most difficult part to get used to.
+Arrow keys?  Apparently those are for amateurs.
+I disabled the arrow keys to force myself to use the hjkl keys for navigation.  It’s a work in progress, but after the first hour or so, it’s not so bad.</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">&quot; Disable Arrow keys in normal and insert modes</span>
+    <span class="nb">nnoremap</span> <span class="p">&lt;</span><span class="k">up</span><span class="p">&gt;</span>    <span class="p">&lt;</span>nop<span class="p">&gt;</span>
+    <span class="nb">nnoremap</span> <span class="p">&lt;</span>down<span class="p">&gt;</span>  <span class="p">&lt;</span>nop<span class="p">&gt;</span>
+    <span class="nb">nnoremap</span> <span class="p">&lt;</span><span class="k">left</span><span class="p">&gt;</span>  <span class="p">&lt;</span>nop<span class="p">&gt;</span>
+    <span class="nb">nnoremap</span> <span class="p">&lt;</span><span class="k">right</span><span class="p">&gt;</span> <span class="p">&lt;</span>nop<span class="p">&gt;</span>
+    <span class="nb">inoremap</span> <span class="p">&lt;</span><span class="k">up</span><span class="p">&gt;</span>    <span class="p">&lt;</span>nop<span class="p">&gt;</span>
+    <span class="nb">inoremap</span> <span class="p">&lt;</span>down<span class="p">&gt;</span>  <span class="p">&lt;</span>nop<span class="p">&gt;</span>
+    <span class="nb">inoremap</span> <span class="p">&lt;</span><span class="k">left</span><span class="p">&gt;</span>  <span class="p">&lt;</span>nop<span class="p">&gt;</span>
+    <span class="nb">inoremap</span> <span class="p">&lt;</span><span class="k">right</span><span class="p">&gt;</span> <span class="p">&lt;</span>nop<span class="p">&gt;</span></code></pre></div>
+
+<h2 id="composability">Composability</h2>
+<p>Vim’s commands are composable.</p>
+
+<p>This means you can take commands and use them together. <code>9&lt;enter&gt;</code> moves down 9 lines.  <code>&gt;&gt;</code> indents.  <code>9&gt;&gt;</code> means indent 9 lines.  </p>
+
+<p>I know that <code>dd</code> means delete a line so <code>9dd</code> means delete 9 lines.  <code>gU</code> means UPPERCASE.  Guess what <code>gU3</code> does?  Correct, it UPPERCASES 3 lines.  If <code>w</code> means select token then <code>gUw</code> will UPPERCASE the entire word.  <code>dw</code> will delete a word.</p>
+
+<p>Each new command greatly increases the amount of work Vim can do for me. <strong>That is what makes Vim exciting to learn for me.</strong></p>
+
+<p>Also just a neat trick I learned earlier today:</p>
+
+<p><code>:r !shellcmd</code>, where shellcmd is some shell command, will pipe the command’s output into your current Vim buffer.</p>
