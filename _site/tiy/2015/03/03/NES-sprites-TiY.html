@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week Seven of The Iron Yard</title>
-  <meta name="description" content="Checkers | Final Projects">
+  <title>Nintendo Sprites</title>
+  <meta name="description" content="NES | Sprites | Palettes">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://alexpate.net/tiy/2015/02/27/Week-07-TiY.html">
+  <link rel="canonical" href="http://alexpate.net/tiy/2015/03/03/NES-sprites-TiY.html">
   <link rel="alternate" type="application/rss+xml" title="Alex Pate" href="http://alexpate.net/feed.xml" />
 </head>
 
@@ -57,64 +57,101 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week Seven of The Iron Yard</h1>
-    <p class="post-meta">Feb 27, 2015</p>
+    <h1 class="post-title">Nintendo Sprites</h1>
+    <p class="post-meta">Mar 3, 2015</p>
   </header>
 
   <article class="post-content">
-    <h1 id="checkers--final-projects">Checkers | Final Projects</h1>
+    <h1 id="nes--sprites--palettes">NES | Sprites | Palettes</h1>
 
-<p>Week Seven.</p>
+<p>My final project at The Iron Yard will require me to pull and draw sprites from NES roms.
+Last week I was able to get the sprites to draw.</p>
 
-<h2 id="checkers">Checkers</h2>
-<p>You know what is super exciting?  Group projects.  :)</p>
+<p>So in an attempt to give back I thought I would share some of what I learned.</p>
 
-<p>This week was pretty interesting.  We were split into four groups, each group was multidisciplinary – Rails, Frontend, iOS.  Together we were tasked with building a multiplayer and multidevice checkers game.  While we didn’t accomplish all of the goals we set out to do, we got most of them and learned a lot in the process.</p>
+<h2 id="background">Background</h2>
 
-<p>I didn’t get to do much work with the iOS group, they were kind of off in their own little world.  However I did work pretty closely with the Rails portion of our team.<br />
-My favorite part was the first time we got player movement working across multiple screens at the same time.  ie Player 1 moves and it shows the move on Player 2’s screen.  There was much high-fiving and cheering when that happened.</p>
+<p>There are a few small pieces of info that you will need to know before we can get into pulling a sprite from a ROM and rendering it.</p>
 
-<p>Pros:</p>
+<p>The NES is an 8-bit system.  The largest number a 8-bit value can hold is <code>decimal: 255</code> <code>hexadecimal: 0xFF</code> <code>binary: 11111111</code></p>
 
-<ul>
-  <li>Instant feedback</li>
-  <li>Watching other people debug</li>
-  <li>Watching web requests on the server and the browser console</li>
-  <li>Interacting with users of another language</li>
-  <li>Seeing two systems work together</li>
-</ul>
+<p>Games store their data in a multitude of ways, including compressing the graphics or keeping them in program data.  This makes some things trickey or impossible to do without actually running the ROM.</p>
 
-<p>Cons:</p>
+<p>Being able to read hexideciamal and understanding binary math will help, but a quick trip to wikipedia should answer and questions you have.</p>
 
-<ul>
-  <li>Doing work, but having to wait to see if it was correct</li>
-  <li>Our team didn’t pick a leader, it was lead by consensus</li>
-  <li>We started planning the first day, but went with a more informal execution process</li>
-  <li>I should have written test</li>
-</ul>
+<h2 id="storage">Storage</h2>
+<p>NES game data can be stored in two parts: PRG and CHR.</p>
 
-<p>My biggest take away was learning how to estimate tasks.  I learned that it is something I need to work on. I assume the more I do this the better I will get at it.</p>
+<p>All games have PRG data.  This is the program data for the game and is stored in 16kb banks.</p>
 
-<h2 id="final-project">Final Project</h2>
-<p>I talked to the Rails instructor and he shot down my emulator idea.  While kind of bummed he made very good arguments about why I shouldn’t do it for my capstone project.  </p>
+<p>Most games also have CHR data, this is where the sprite information is kept and is stored in 8kb banks.
+Not all games have CHR storage, Zelda, Mega Man, Metroid, all store their sprite data in PRG.  I will not cover how to obtain their sprite data.</p>
 
-<p>However he did help me keep my final project in the realm of NES.  I will be working on a NES sprite editor.  I have done some of the preliminary work this week (week 8, I write these a week after) and I am able to pull the sprite (CHR) data from a NES ROM.  I’ve put the work up on my <a href="https://github.com/xeinherjar/nixel">Github</a> page.  The code is a mess, but that’s okay.  Just a quick exercise to make sure this is feasible, and it is.</p>
+<p>For games that do use CHR its pretty trival to grab.
+The ROM header will tell you how many banks of PRG and CHR there are.  To see the layout of the iNES header check out the <a href="http://wiki.nesdev.com/w/index.php/INES">nesdev wiki</a>.</p>
 
-<p>One thing I really want to do is write up how the NES processes and draws pixels.  I found a lot of good information online but most of it assumes some previous knowledge. </p>
+<h2 id="drawing">Drawing</h2>
 
-<p>And a few screen shots to show it off.</p>
+<p>Sprites are 8x8 or 8x16.  A 8x16 sprite is really just two 8x8 sprites.
+It takes 16 bytes to make one sprite.  Each byte represents one row of the sprite, however since each pixel can have four values you need another byte.  8 x 2 = 16.
+Each bit in the byte is a pixel.  We have to combine two bytes so that each pixel can be a value of 0-3.
+Lets say byte 0 is <code>0x4D</code> (decimal 77) and we are combining it with byte 8 which is <code>0xC4</code> (decimal 196).</p>
 
-<h3 id="super-mario-world">Super Mario World</h3>
-<p><img src="/assets/mario.png" alt="mario" /></p>
+<p>The two bytes are added together using binary addition:</p>
+<pre>
+  0  1  0  0  1  1  0  1
++ 1  1  0  0  0  1  0  0
+------------------------
+ 10 11 00 00 01 11 00 01
 
-<h3 id="ice-hockey">Ice Hockey</h3>
-<p><img src="/assets/hockey.png" alt="hockey" /></p>
+  2  3  0  0  1  3  0  1
+</pre>
+
+<p><strong>Example:</strong></p>
+
+<p>Given sprite data</p>
+
+<pre>
+[ 0x03, 0x0F, 0x1F, 0x1F, 0x1C, 0x24, 0x26, 0x66,
+  0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x7F]
+</pre>
+
+<pre>
+|Bytes 0-7|  Binary  | Bytes 8-15|  Binary  |  Binary Addition  |
+|---------|----------|-----------|----------|-------------------|
+|0x03     | 00000011 |0x00       | 00000000 | 00000011          |
+|0x0F     | 00001111 |0x00       | 00000000 | 00001111          |
+|0x1F     | 00011111 |0x00       | 00000000 | 00011111          |
+|0x1F     | 00011111 |0x00       | 00000000 | 00011111          |
+|0x1C     | 00011100 |0x1F       | 00011111 | 00033322          |
+|0x24     | 00100100 |0x3F       | 00111111 | 00322322          |
+|0x26     | 00100110 |0x3F       | 00111111 | 00322332          |
+|0x66     | 01100110 |0x7F       | 01111111 | 03322332          |
+</pre>
+
+<p>This is the top left of Mario’s head.
+<img src="/assets/mario-head-top-left.png" alt="mario-head" /></p>
+
+<h2 id="palettes">Palettes</h2>
+
+<p>This is great but the CHR only stores the info neccessary to draw the sprite.  I doesn’t contain the color information.
+For colors we need to obtain the palette data.  Sadly this could be anywhere in the PRG data or even generated at run time.  In order to obtain it you have to pull it from the PPU.  What I plan on doing is searching the PRG data for blocks of bytes that look like they may be palettes.</p>
+
+<p>The NES palette only has 64 colors and palette data really just tells the PPU which color to pull by index.</p>
+
+<p>Starting with the most simple thing that could work I walk the PRG data and collect bytes that are less than <code>0x40</code> [64].  If there are at least 4 contiguous bytes that are small enough I’ll keep them as a canidate.</p>
+
+<p><img src="/assets/mario-palette.png" alt="mario-palette" /></p>
+
+<p>As I work with the data I’m sure patterns will become apparent, and if they do I should be able to refactor the palette searching code to be better.</p>
+
+<p>I also want to give a big thanks to <a href="https://github.com/redline6561">Brit</a>, the Ruby on Rails instructor.  Even though I’m not in his class he’s been kind enough to sit down with me and work with me on this project.</p>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = 'alexpate';
-    
+
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

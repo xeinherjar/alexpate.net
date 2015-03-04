@@ -52,12 +52,10 @@ One thing I really want to do is write up how the NES processes and draws pixels
 And a few screen shots to show it off.
 
 ### Super Mario World
-![mario run](/assets/mario-sprite-01.png)
-![mario jump](/assets/mario-sprite-02.png)
+![mario](/assets/mario.png)
 
 ### Ice Hockey
-![ice hockey](/assets/ice-hockey-sprite-01.png)
-![ice hockey](/assets/ice-hockey-sprite-02.png)
+![hockey](/assets/hockey.png)
 
 
 

@@ -6,9 +6,120 @@
 </description>
     <link>http://alexpate.net/</link>
     <atom:link href="http://alexpate.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Feb 2015 12:52:25 -0500</pubDate>
-    <lastBuildDate>Fri, 27 Feb 2015 12:52:25 -0500</lastBuildDate>
+    <pubDate>Wed, 04 Mar 2015 15:57:24 -0500</pubDate>
+    <lastBuildDate>Wed, 04 Mar 2015 15:57:24 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Nintendo Sprites</title>
+        <description>&lt;h1 id=&quot;nes--sprites--palettes&quot;&gt;NES | Sprites | Palettes&lt;/h1&gt;
+
+&lt;p&gt;My final project at The Iron Yard will require me to pull and draw sprites from NES roms.
+Last week I was able to get the sprites to draw.&lt;/p&gt;
+
+&lt;p&gt;So in an attempt to give back I thought I would share some of what I learned.&lt;/p&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;There are a few small pieces of info that you will need to know before we can get into pulling a sprite from a ROM and rendering it.&lt;/p&gt;
+
+&lt;p&gt;The NES is an 8-bit system.  The largest number a 8-bit value can hold is &lt;code&gt;decimal: 255&lt;/code&gt; &lt;code&gt;hexadecimal: 0xFF&lt;/code&gt; &lt;code&gt;binary: 11111111&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Games store their data in a multitude of ways, including compressing the graphics or keeping them in program data.  This makes some things trickey or impossible to do without actually running the ROM.&lt;/p&gt;
+
+&lt;p&gt;Being able to read hexideciamal and understanding binary math will help, but a quick trip to wikipedia should answer and questions you have.&lt;/p&gt;
+
+&lt;h2 id=&quot;storage&quot;&gt;Storage&lt;/h2&gt;
+&lt;p&gt;NES game data can be stored in two parts: PRG and CHR.&lt;/p&gt;
+
+&lt;p&gt;All games have PRG data.  This is the program data for the game and is stored in 16kb banks.&lt;/p&gt;
+
+&lt;p&gt;Most games also have CHR data, this is where the sprite information is kept and is stored in 8kb banks.
+Not all games have CHR storage, Zelda, Mega Man, Metroid, all store their sprite data in PRG.  I will not cover how to obtain their sprite data.&lt;/p&gt;
+
+&lt;p&gt;For games that do use CHR its pretty trival to grab.
+The ROM header will tell you how many banks of PRG and CHR there are.  To see the layout of the iNES header check out the &lt;a href=&quot;http://wiki.nesdev.com/w/index.php/INES&quot;&gt;nesdev wiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;drawing&quot;&gt;Drawing&lt;/h2&gt;
+
+&lt;p&gt;Sprites are 8x8 or 8x16.  A 8x16 sprite is really just two 8x8 sprites.
+It takes 16 bytes to make one sprite.  Each byte represents one row of the sprite, however since each pixel can have four values you need another byte.  8 x 2 = 16.
+Each bit in the byte is a pixel.  We have to combine two bytes so that each pixel can be a value of 0-3.
+Lets say byte 0 is &lt;code&gt;0x4D&lt;/code&gt; (decimal 77) and we are combining it with byte 8 which is &lt;code&gt;0xC4&lt;/code&gt; (decimal 196).&lt;/p&gt;
+
+&lt;p&gt;The two bytes are added together using binary addition:&lt;/p&gt;
+&lt;pre&gt;
+  0  1  0  0  1  1  0  1
++ 1  1  0  0  0  1  0  0
+------------------------
+ 10 11 00 00 01 11 00 01
+
+  2  3  0  0  1  3  0  1
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given sprite data&lt;/p&gt;
+
+&lt;pre&gt;
+[ 0x03, 0x0F, 0x1F, 0x1F, 0x1C, 0x24, 0x26, 0x66,
+  0x00, 0x00, 0x00, 0x00, 0x1F, 0x3F, 0x3F, 0x7F]
+&lt;/pre&gt;
+
+&lt;pre&gt;
+|Bytes 0-7|  Binary  | Bytes 8-15|  Binary  |  Binary Addition  |
+|---------|----------|-----------|----------|-------------------|
+|0x03     | 00000011 |0x00       | 00000000 | 00000011          |
+|0x0F     | 00001111 |0x00       | 00000000 | 00001111          |
+|0x1F     | 00011111 |0x00       | 00000000 | 00011111          |
+|0x1F     | 00011111 |0x00       | 00000000 | 00011111          |
+|0x1C     | 00011100 |0x1F       | 00011111 | 00033322          |
+|0x24     | 00100100 |0x3F       | 00111111 | 00322322          |
+|0x26     | 00100110 |0x3F       | 00111111 | 00322332          |
+|0x66     | 01100110 |0x7F       | 01111111 | 03322332          |
+&lt;/pre&gt;
+
+&lt;p&gt;This is the top left of Mario’s head.
+&lt;img src=&quot;/assets/mario-head-top-left.png&quot; alt=&quot;mario-head&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;palettes&quot;&gt;Palettes&lt;/h2&gt;
+
+&lt;p&gt;This is great but the CHR only stores the info neccessary to draw the sprite.  I doesn’t contain the color information.
+For colors we need to obtain the palette data.  Sadly this could be anywhere in the PRG data or even generated at run time.  In order to obtain it you have to pull it from the PPU.  What I plan on doing is searching the PRG data for blocks of bytes that look like they may be palettes.&lt;/p&gt;
+
+&lt;p&gt;The NES palette only has 64 colors and palette data really just tells the PPU which color to pull by index.&lt;/p&gt;
+
+&lt;p&gt;Starting with the most simple thing that could work I walk the PRG data and collect bytes that are less than &lt;code&gt;0x40&lt;/code&gt; [64].  If there are at least 4 contiguous bytes that are small enough I’ll keep them as a canidate.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/mario-palette.png&quot; alt=&quot;mario-palette&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As I work with the data I’m sure patterns will become apparent, and if they do I should be able to refactor the palette searching code to be better.&lt;/p&gt;
+
+&lt;p&gt;I also want to give a big thanks to &lt;a href=&quot;https://github.com/redline6561&quot;&gt;Brit&lt;/a&gt;, the Ruby on Rails instructor.  Even though I’m not in his class he’s been kind enough to sit down with me and work with me on this project.&lt;/p&gt;
+
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = &#39;alexpate&#39;;
+
+    /* * * DON&#39;T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+        dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+        (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+    })();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+</description>
+        <pubDate>Tue, 03 Mar 2015 06:40:10 -0500</pubDate>
+        <link>http://alexpate.net/tiy/2015/03/03/NES-sprites-TiY.html</link>
+        <guid isPermaLink="true">http://alexpate.net/tiy/2015/03/03/NES-sprites-TiY.html</guid>
+        
+        
+        <category>tiy</category>
+        
+      </item>
     
       <item>
         <title>Week Seven of The Iron Yard</title>
@@ -55,12 +166,10 @@ My favorite part was the first time we got player movement working across multip
 &lt;p&gt;And a few screen shots to show it off.&lt;/p&gt;
 
 &lt;h3 id=&quot;super-mario-world&quot;&gt;Super Mario World&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/mario-sprite-01.png&quot; alt=&quot;mario run&quot; /&gt;
-&lt;img src=&quot;/assets/mario-sprite-02.png&quot; alt=&quot;mario jump&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/mario.png&quot; alt=&quot;mario&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;ice-hockey&quot;&gt;Ice Hockey&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/ice-hockey-sprite-01.png&quot; alt=&quot;ice hockey&quot; /&gt;
-&lt;img src=&quot;/assets/ice-hockey-sprite-02.png&quot; alt=&quot;ice hockey&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/hockey.png&quot; alt=&quot;hockey&quot; /&gt;&lt;/p&gt;
 
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
