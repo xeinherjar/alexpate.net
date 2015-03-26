@@ -6,8 +6,8 @@
 </description>
     <link>http://alexpate.net/</link>
     <atom:link href="http://alexpate.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Mar 2015 19:19:30 -0400</pubDate>
-    <lastBuildDate>Wed, 25 Mar 2015 19:19:30 -0400</lastBuildDate>
+    <pubDate>Wed, 25 Mar 2015 20:13:21 -0400</pubDate>
+    <lastBuildDate>Wed, 25 Mar 2015 20:13:21 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -155,21 +155,6 @@ My favorite part was the first time we got player movement working across multip
 
 &lt;h3 id=&quot;ice-hockey&quot;&gt;Ice Hockey&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/hockey.png&quot; alt=&quot;hockey&quot; /&gt;&lt;/p&gt;
-
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = &#39;alexpate&#39;;
-    
-    /* * * DON&#39;T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-        dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-        (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
-    })();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
 </description>
         <pubDate>Fri, 27 Feb 2015 06:40:10 -0500</pubDate>
         <link>http://alexpate.net/tiy/2015/02/27/Week-07-TiY.html</link>
