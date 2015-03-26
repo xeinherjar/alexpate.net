@@ -24,3 +24,19 @@ Foundation was used for styling.
 
 - [live](http://xeinherjar.github.io/angular-reaction-gif/#/)
 - [code](https://github.com/xeinherjar/angular-reaction-gif)
+
+## Recreation of GitHub's repo page
+This is a recreation of GitHub's repo page.
+The data is static and pulled from a local object.
+Styles were done in SASS.
+
+- [live](http://xeinherjar.github.io/github-frontpage-clone/)
+- [code](https://github.com/xeinherjar/github-frontpage-clone)
+
+## Recreation of Etsy's front page
+This is a recreation of Etsy's front page.
+The data is static and pulled from a local object.
+Styles were done in SASS.
+
+- [live](http://xeinherjar.github.io/etsy-frontpage-clone/)
+- [code](https://github.com/xeinherjar/etsy-frontpage-clone)
